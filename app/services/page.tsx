@@ -57,9 +57,9 @@ export default function Services() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const token = localStorage.getItem("token");
-      if (token) {
+      if (!token) {
         router.push("/");
-        toast.error("You are already logged in");
+        toast.error("Please login to view services");
       }
     }
   }, [router]);
@@ -78,10 +78,9 @@ export default function Services() {
   const fetchPlaces = async (lat: number, lon: number, category: string | null) => {
     setLoading(true);
     try {
-      const apiKey = "ucpAxL9Eco2To5TbKsyjbXPKDc5ra8qM43eK_Uttk7U";
       const categoryQuery = category ? `q=${encodeURIComponent(category)}` : "";
 
-      const url = `https://discover.search.hereapi.com/v1/discover?at=${lat},${lon}&limit=20&${categoryQuery}&apiKey=${apiKey}`;
+      const url = `https://discover.search.hereapi.com/v1/discover?at=${lat},${lon}&limit=20&${categoryQuery}&apiKey=${process.env.NEXT_PUBLIC_API_KEY}`;
 
       const response = await fetch(url);
       const data = await response.json();

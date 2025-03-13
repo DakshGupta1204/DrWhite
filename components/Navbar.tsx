@@ -22,7 +22,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Stethoscope className="h-8 w-8 text-emerald-600" />
-              <span className="ml-2 text-2xl font-bold text-gray-900">DrWhite</span>
+              <span className="ml-2 text-2xl font-bold text-gray-900">FixKaro</span>
             </Link>
           </div>
           <div className="flex items-center space-x-4">

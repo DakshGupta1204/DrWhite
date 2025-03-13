@@ -29,7 +29,7 @@ export default function Auth() {
     setIsLoading(true);
 
     try {
-      const endpoint = isLogin ? "http://localhost:3001/api/auth/login" : "http://localhost:3001/api/auth/register";
+      const endpoint = isLogin ? `${process.env.NEXT_PUBLIC_API_URL}/api/auth/login` : `${process.env.NEXT_PUBLIC_API_URL}/api/auth/register`;
       const payload = isLogin
         ? { email, password }
         : { email, password, name, phone };

@@ -1,6 +1,6 @@
 "use client";
 
-import { Star, MapPin, Phone, Mail, Award, Wrench, Clock, ThumbsUp } from 'lucide-react';
+import { Star, MapPin, Phone, Award, Wrench, Clock, ThumbsUp } from 'lucide-react';
 import Image from 'next/image';
 
 interface ServiceProviderProfileProps {

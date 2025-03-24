@@ -4,7 +4,32 @@ import { motion } from 'framer-motion';
 import { ArrowRight, WashingMachine, Wind, Zap, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+
+// Define types for the service items
+interface ServiceItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+// Define types for features
+interface FeatureItem {
+  icon: React.ElementType;
+  title: string;
+  desc: string;
+}
+
+// Define types for stats
+interface StatItem {
+  value: string;
+  label: string;
+}
+
+// Define types for why choose us items
+interface ChooseUsItem {
+  title: string;
+  icon: React.ElementType;
+}
 
 export default function Home() {
   return (
@@ -154,7 +179,7 @@ export default function Home() {
                             { value: '98%', label: 'Success Rate' },
                             { value: '24h', label: 'Response Time' },
                             { value: '2k+', label: 'Happy Clients' }
-                          ].map((stat, index) => (
+                          ].map((stat: StatItem, index) => (
                             <div key={index} className="text-center">
                               <div className="text-lg font-bold text-emerald-600">{stat.value}</div>
                               <div className="text-xs text-gray-500">{stat.label}</div>
@@ -176,7 +201,7 @@ export default function Home() {
             { icon: WashingMachine, title: 'Appliance Repair', desc: 'Expert repair services for washing machines, refrigerators, and more.' },
             { icon: Wind, title: 'AC Services', desc: 'Installation, maintenance, and repair services for all AC brands.' },
             { icon: Zap, title: 'Quick Response', desc: 'Same-day service with experienced technicians at your doorstep.' }
-          ].map((feature, index) => (
+          ].map((feature: FeatureItem, index) => (
             <motion.div 
               key={index}
               className="group relative bg-white/70 backdrop-blur-lg p-8 rounded-2xl shadow-lg border border-white/50 overflow-hidden"
@@ -225,7 +250,7 @@ export default function Home() {
                 description: 'Certified professionals with years of experience in appliance repair.',
                 icon: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=300&auto=format&fit=crop', 
               }
-            ].map((item, index) => (
+            ].map((item: ServiceItem, index) => (
               <motion.div 
                 key={index} 
                 className="group h-[400px] relative bg-white rounded-2xl overflow-hidden shadow-lg"
@@ -275,7 +300,7 @@ export default function Home() {
               { title: '90-Day Warranty', icon: CheckCircle2 },
               { title: 'Transparent Pricing', icon: CheckCircle2 },
               { title: '24/7 Support', icon: CheckCircle2 }
-            ].map((item, index) => (
+            ].map((item: ChooseUsItem, index) => (
               <motion.div 
                 key={index}
                 className="group bg-gradient-to-br from-emerald-50 to-white p-6 rounded-xl border border-emerald-100/50 shadow-lg hover:shadow-xl transition-all duration-300"

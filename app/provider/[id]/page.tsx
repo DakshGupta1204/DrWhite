@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import ServiceProviderProfile from '@/components/ServiceProviderProfile';
 import Navbar from '@/components/Navbar';
@@ -34,8 +34,8 @@ const mockProvider = {
 
 export default function ProviderProfile() {
   const params = useParams();
-  const [provider, setProvider] = useState(mockProvider);
-
+  // const [provider, setProvider] = useState(mockProvider);
+  const provider = mockProvider
   useEffect(() => {
     // In a real app, you would fetch the provider data here
     // const fetchProvider = async () => {

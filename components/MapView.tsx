@@ -6,8 +6,13 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Star } from 'lucide-react';
 
+// Define interface for Leaflet icon prototype with the _getIconUrl property
+interface IconDefaultPrototype extends L.Icon.Default {
+  _getIconUrl?: (name: string) => string;
+}
+
 // Fix for default marker icons in Next.js
-delete (L.Icon.Default.prototype as any)._getIconUrl;
+delete ((L.Icon.Default.prototype) as IconDefaultPrototype)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconUrl: '/marker-icon.png',
   iconRetinaUrl: '/marker-icon-2x.png',

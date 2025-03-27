@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://dr-white.vercel.app/sitemap.xml 
+Sitemap: https://fixkaro.vercel.app/sitemap.xml 

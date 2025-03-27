@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "FixKaro Home Services | Professional Appliance Repair",
   description: "Expert home appliance repair services at your doorstep. Professional technicians for AC, refrigerator, washing machine repair and maintenance services with same-day appointments.",
   keywords: "home appliance repair, washing machine repair, refrigerator service, AC maintenance, appliance technician, same day repair, home services, FixKaro",
-  metadataBase: new URL('https://dr-white.vercel.app'),
+  metadataBase: new URL('https://fixkaro.vercel.app'),
   alternates: {
     canonical: '/',
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "FixKaro Home Services | Professional Appliance Repair",
     description: "Expert home appliance repair services at your doorstep. Professional technicians for all major appliance brands.",
-    url: 'https://dr-white.vercel.app',
+    url: 'https://fixkaro.vercel.app',
     siteName: 'FixKaro Home Services',
     images: [
       {
